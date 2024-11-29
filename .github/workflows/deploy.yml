@@ -3,7 +3,8 @@ name: Deploy to Azure App Service
 on:
   push:
     branches:
-      - main # Cambia esto si usas otra rama principal
+      - main
+  workflow_dispatch: # Permite la ejecución manual
 
 jobs:
   build-and-deploy:
