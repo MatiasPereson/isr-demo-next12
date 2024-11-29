@@ -33,6 +33,6 @@ jobs:
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
       with:
-        app-name: "NOMBRE_DEL_APP_SERVICE" # Reemplaza con el nombre de tu App Service
+        app-name: "giuliana-test" # Reemplaza con el nombre de tu App Service
         slot-name: "production"           # Cambia si usas un slot diferente
         publish-profile: ${{ secrets.AZURE_DEPLOYMENT_TOKEN }}
