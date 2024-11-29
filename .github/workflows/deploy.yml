@@ -1,0 +1,37 @@
+name: Deploy to Azure App Service
+
+on:
+  push:
+    branches:
+      - main # Cambia esto si usas otra rama principal
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout del código
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Configurar Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # Cambia por la versión de Node.js de tu proyecto
+
+    # 3. Instalar dependencias
+    - name: Install dependencies
+      run: npm install
+
+    # 4. Generar build de Next.js
+    - name: Build Next.js app
+      run: npm run build
+
+    # 5. Publicar en Azure App Service
+    - name: Deploy to Azure App Service
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: "NOMBRE_DEL_APP_SERVICE" # Reemplaza con el nombre de tu App Service
+        slot-name: "production"           # Cambia si usas un slot diferente
+        publish-profile: bb5cc59dc1a045df49a73f56ef49df9d0cee9db37d708e52405328a4bc37144805-b33f06b7-ed19-46c1-8bd2-3b300b5e51cb0100025051285210
