@@ -35,4 +35,4 @@ jobs:
       with:
         app-name: "giuliana-test" # Reemplaza con el nombre de tu App Service
         slot-name: "production"           # Cambia si usas un slot diferente
-        publish-profile: ${{ secrets.AZURE_DEPLOYMENT_TOKEN }}
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_DEPLOYMENT_TOKEN }}
