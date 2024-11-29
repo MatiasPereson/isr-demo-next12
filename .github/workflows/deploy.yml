@@ -34,4 +34,4 @@ jobs:
       with:
         app-name: "NOMBRE_DEL_APP_SERVICE" # Reemplaza con el nombre de tu App Service
         slot-name: "production"           # Cambia si usas un slot diferente
-        publish-profile: bb5cc59dc1a045df49a73f56ef49df9d0cee9db37d708e52405328a4bc37144805-b33f06b7-ed19-46c1-8bd2-3b300b5e51cb0100025051285210
+        publish-profile: ${{ secrets.AZURE_DEPLOYMENT_TOKEN }}
